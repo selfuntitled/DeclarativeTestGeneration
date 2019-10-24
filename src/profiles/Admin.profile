@@ -20,7 +20,7 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>Flow_Test_Template__mdt.Template__c</field>
-        <readable>false</readable>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>true</editable>
@@ -90,12 +90,12 @@
     <fieldPermissions>
         <editable>false</editable>
         <field>TestFlowRun__mdt.Flow_Api_Name__c</field>
-        <readable>false</readable>
+        <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
         <editable>false</editable>
         <field>TestFlowRun__mdt.Run_As_Profile__c</field>
-        <readable>false</readable>
+        <readable>true</readable>
     </fieldPermissions>
     <layoutAssignments>
         <layout>Flow_Test_Template__mdt-Flow Test Template Layout</layout>

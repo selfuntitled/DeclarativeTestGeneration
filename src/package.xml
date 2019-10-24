@@ -7,6 +7,18 @@
         <name>ApexClass</name>
     </types>
     <types>
+        <members>AppSwitcher</members>
+        <name>AppMenu</name>
+    </types>
+    <types>
+        <members>DeclarativeTestRunner</members>
+        <name>AuthProvider</name>
+    </types>
+    <types>
+        <members>DeclarativeTestRunner</members>
+        <name>ConnectedApp</name>
+    </types>
+    <types>
         <members>Opportunity.Opportunity_Size__c</members>
         <members>Flow_Test_Template__mdt.Template__c</members>
         <members>TestFlowRun__mdt.Flow_Api_Name__c</members>
@@ -42,6 +54,10 @@
     <types>
         <members>Contact.All_Contacts</members>
         <name>ListView</name>
+    </types>
+    <types>
+        <members>DeclarativeTestRunner</members>
+        <name>NamedCredential</name>
     </types>
     <types>
         <members>Admin</members>

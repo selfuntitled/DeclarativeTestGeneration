@@ -189,6 +189,20 @@ public with sharing class DeclarativeTestRunner {
         System.assertEquals('Success', result);
         Test.stopTest();
     }
+    /**
+     * Example of test method generated over the tooling API
+     * method name = metadata type name
+     * testRunner argument is metadata type label
+     */
+    @IsTest
+    static void testFlowAccountUpdateProcessBuilder(){
+        String result = testRunner('Test_Flow_Account_Update_Process_Builder');
+        //Testing only starts if metadata record is found, may return without testing start.
+        if(Test.isRunningTest()){
+            System.assertEquals('Success', result);
+            Test.stopTest();
+        }
+    }
 
 
     /**
@@ -243,7 +257,6 @@ public with sharing class DeclarativeTestRunner {
 
             }
         } else {
-            Test.startTest();
             //No metadata found, assume no test to run here.
             System.debug('No flowTestRunner metadata found for run '+runNumber+', nothing to test.' +
                     'If you expected a test to run, check your metadata naming');
