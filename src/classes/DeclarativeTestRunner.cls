@@ -208,7 +208,7 @@ public with sharing class DeclarativeTestRunner {
     /**
      * testRunner helper class
      *
-     * @param runNumber
+     * @param runNumber the number/label of the custom metadata record that contains the flow information.
      *
      * @return
      */
@@ -266,5 +266,7 @@ public with sharing class DeclarativeTestRunner {
         return result;
 
     }
+
+
 
 }
