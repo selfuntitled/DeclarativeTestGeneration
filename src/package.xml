@@ -3,9 +3,14 @@
     <fullName>DeclarativeTestGeneration</fullName>
     <types>
         <members>ApiWrapper</members>
+        <members>DTG_SetupAuthWizardPageController</members>
         <members>DeclarativeTestRunner</members>
         <members>flowTest</members>
         <name>ApexClass</name>
+    </types>
+    <types>
+        <members>apiTest</members>
+        <name>ApexPage</name>
     </types>
     <types>
         <members>Opportunity.Opportunity_Size__c</members>
@@ -45,6 +50,10 @@
         <name>ListView</name>
     </types>
     <types>
+        <members>Declarative_Tests</members>
+        <name>NamedCredential</name>
+    </types>
+    <types>
         <members>Admin</members>
         <members>Custom%3A Marketing Profile</members>
         <members>Custom%3A Sales Profile</members>
@@ -54,6 +63,11 @@
     <types>
         <members>ToolingAPI</members>
         <name>RemoteSiteSetting</name>
+    </types>
+    <types>
+        <members>jQuery</members>
+        <members>jsforce</members>
+        <name>StaticResource</name>
     </types>
     <types>
         <members>Opportunity.FieldUpdateOppSize_Big</members>

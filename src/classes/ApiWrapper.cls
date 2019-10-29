@@ -24,7 +24,7 @@ public with sharing class ApiWrapper {
         HttpRequest req = new HttpRequest();
         req.setHeader('Authorization', 'Bearer ' + UserInfo.getSessionId());
         req.setHeader('Content-Type', 'application/json');
-        req.setEndpoint('callout:DeclarativeTestRunner/'+endPointPath);
+        req.setEndpoint('callout:Declarative_Tests/'+endPointPath);
         req.setMethod(apiMethod);
 
         return req;
@@ -33,7 +33,8 @@ public with sharing class ApiWrapper {
     public static string getCurrentClass(){
         System.debug(UserInfo.getLastName());
         String apexClassBody = '';
-        HttpRequest req = buildRequest('query/?q=SELECT+Id,Name,Body,Metadata+FROM+ApexClassMember+WHERE+Name=DeclarativeTestRunner','GET');
+        //HttpRequest req = buildRequest('query/?q=SELECT+Id,Name,Body,Metadata+FROM+ApexClassMember+WHERE+Name=DeclarativeTestRunner','GET');
+        HttpRequest req = buildRequest('query/?q=SELECT+Id,FullName,Body+FROM+ApexClass+WHERE+FullName=DeclarativeTestRunner','GET');
         System.debug(req);
         Http h = new Http();
         HttpResponse res = h.send(req);

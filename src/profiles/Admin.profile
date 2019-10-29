@@ -5,6 +5,10 @@
         <enabled>true</enabled>
     </classAccesses>
     <classAccesses>
+        <apexClass>DTG_SetupAuthWizardPageController</apexClass>
+        <enabled>true</enabled>
+    </classAccesses>
+    <classAccesses>
         <apexClass>DeclarativeTestRunner</apexClass>
         <enabled>true</enabled>
     </classAccesses>
@@ -22,7 +26,7 @@
         <name>TestFlowRun__mdt</name>
     </customMetadataTypeAccesses>
     <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
         <field>Flow_Test_Template__mdt.Template__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -92,12 +96,12 @@
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
         <field>TestFlowRun__mdt.Flow_Api_Name__c</field>
         <readable>true</readable>
     </fieldPermissions>
     <fieldPermissions>
-        <editable>false</editable>
+        <editable>true</editable>
         <field>TestFlowRun__mdt.Run_As_Profile__c</field>
         <readable>true</readable>
     </fieldPermissions>
@@ -119,6 +123,10 @@
         <object>Opportunity</object>
         <viewAllRecords>true</viewAllRecords>
     </objectPermissions>
+    <pageAccesses>
+        <apexPage>apiTest</apexPage>
+        <enabled>true</enabled>
+    </pageAccesses>
     <tabVisibilities>
         <tab>standard-Opportunity</tab>
         <visibility>DefaultOn</visibility>
