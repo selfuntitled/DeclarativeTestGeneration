@@ -1,11 +1,8 @@
-minimum_cumulusci_version: '3.0.2'
 project:
     name: DeclarativeTestGeneration
     package:
         name:  DeclarativeTestGeneration
         api_version: '47.0'
-    dependencies:
-        - github: 'https://github.com/selfuntitled/apex-toolingapi'
 
 tasks:
     robot:
@@ -18,3 +15,9 @@ tasks:
         options:
             path: robot/DeclarativeTestGeneration/tests
             output: robot/DeclarativeTestGeneration/doc/DeclarativeTestGeneration_tests.html
+
+flows:
+    deploy_unmanaged:
+        steps:
+            4:
+                task: None

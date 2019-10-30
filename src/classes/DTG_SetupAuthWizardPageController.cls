@@ -35,10 +35,12 @@ public with sharing class DTG_SetupAuthWizardPageController {
         return jsonPayload;
     }
     public static String buildMetadataContainer(String methodName){
-        String metadataPayload = '{"Name":"'+methodName+'"}';
-        String jsonPayload = JSON.serialize(metadataPayload);
-        System.debug(jsonPayload);
-        return jsonPayload;
+        JSONGenerator jgen = JSON.createGenerator(true);
+        jgen.writeStartObject();
+        jgen.writeStringField('Name', methodName);
+        jgen.writeEndObject();
+
+        return jgen.getAsString();
     }
 
     public static HttpRequest buildRequest(String endPointPath, String apiMethod) {
@@ -57,12 +59,14 @@ public with sharing class DTG_SetupAuthWizardPageController {
     public static void createApexClass(){
 
         HttpRequest containerReq = buildRequest('services/data/v47.0/tooling/sobjects/MetadataContainer/','POST');
-        containerReq.setBody(buildMetadataContainer('test'));
+        containerReq.setBody(buildMetadataContainer('test' + String.valueOf(System.now())));
+        System.debug(containerReq.getBody());
         Http containerHttp = new Http();
         HttpResponse containerRes = containerHttp.send(containerReq);
-        List<Object> containerResult = (List<Object>)JSON.deserializeUntyped(containerRes.getBody());
+        System.debug(containerRes);
+        Map<String, Object> containerResult = (Map<String, Object>)JSON.deserializeUntyped(containerRes.getBody());
         System.debug(containerResult);
-        String containerId = (String)containerResult[0];
+        String containerId = (String)containerResult.get('Id');
         //Add error handling
 
         String JSONString = buildApexPayload('test', 'test', containerId);
