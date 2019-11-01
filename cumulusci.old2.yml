@@ -1,0 +1,20 @@
+minimum_cumulusci_version: '3.0.2'
+project:
+    name: DeclarativeTestGeneration
+    package:
+        name:  DeclarativeTestGeneration
+        api_version: '47.0'
+    dependencies:
+        - github: 'https://github.com/selfuntitled/apex-toolingapi/'
+
+tasks:
+    robot:
+        options:
+            suites: robot/DeclarativeTestGeneration/tests
+            options:
+                outputdir: robot/DeclarativeTestGeneration/results
+
+    robot_testdoc:
+        options:
+            path: robot/DeclarativeTestGeneration/tests
+            output: robot/DeclarativeTestGeneration/doc/DeclarativeTestGeneration_tests.html

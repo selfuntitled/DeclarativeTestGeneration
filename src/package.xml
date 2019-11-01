@@ -46,21 +46,6 @@
         <name>ListView</name>
     </types>
     <types>
-        <members>Declarative_Tests</members>
-        <name>NamedCredential</name>
-    </types>
-    <types>
-        <members>Admin</members>
-        <members>Custom%3A Marketing Profile</members>
-        <members>Custom%3A Sales Profile</members>
-        <members>Custom%3A Support Profile</members>
-        <name>Profile</name>
-    </types>
-    <types>
-        <members>ToolingAPI</members>
-        <name>RemoteSiteSetting</name>
-    </types>
-    <types>
         <members>jQuery</members>
         <members>jsforce</members>
         <name>StaticResource</name>
