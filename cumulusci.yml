@@ -20,6 +20,7 @@ tasks:
             path: robot/DeclarativeTestGeneration/tests
             output: robot/DeclarativeTestGeneration/doc/DeclarativeTestGeneration_tests.html
             
+flows:
     deploy_unmanaged:
         description: Deploy the unmanaged metadata from the package
         steps:
@@ -38,5 +39,3 @@ tasks:
             3:
                 task: uninstall_packaged_incremental
                 when: project_config.project__source_format != "sfdx" or not org_config.scratch
-
-
