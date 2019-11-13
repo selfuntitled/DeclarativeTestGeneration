@@ -51,6 +51,11 @@
         <name>Profile</name>
     </types>
     <types>
+        <members>jQuery</members>
+        <members>jsforce</members>
+        <name>StaticResource</name>
+    </types>
+    <types>
         <members>Opportunity.FieldUpdateOppSize_Big</members>
         <members>Opportunity.FieldUpdateOppSize_Medium</members>
         <members>Opportunity.FieldUpdateOppSize_Small</members>
