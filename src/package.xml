@@ -9,6 +9,10 @@
         <name>ApexClass</name>
     </types>
     <types>
+        <members>apiTest</members>
+        <name>ApexPage</name>
+    </types>
+    <types>
         <members>Opportunity.Opportunity_Size__c</members>
         <members>Flow_Test_Template__mdt.Template__c</members>
         <members>TestFlowRun__mdt.Flow_Api_Name__c</members>
