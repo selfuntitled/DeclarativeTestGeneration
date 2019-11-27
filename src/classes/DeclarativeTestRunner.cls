@@ -20,27 +20,21 @@ public with sharing class DeclarativeTestRunner {
         string profileName; //variable to store run as profile
         string flowName;
         List<TestFlowRun__mdt> thisTestRun = [SELECT Id, Flow_Api_Name__c, Run_As_Profile__c FROM TestFlowRun__mdt WHERE Label =: runNumber LIMIT 1];
+
         if(thisTestRun.size() > 0){
             if(thisTestRun[0].Run_As_Profile__c == null){
                 profileName = 'System Administrator';
             } else {
                 profileName = thisTestRun[0].Run_As_Profile__c;
             }
-            flowName = thisTestRun[0].Flow_Api_Name__c;
         }
+        flowName = thisTestRun[0].Flow_Api_Name__c;
+
         system.debug('Running ' + flowName);
-
-        list<profile> testProfile = [SELECT Id FROM Profile WHERE Name =: profileName LIMIT 1];
-
 
 
         //create and insert the test user to run the flow test as
-        user testUser = new User(Alias = 'FlowT', Email= 'test' + 'Test@test.com',
-                EmailEncodingKey='UTF-8', LastName='test',
-                LanguageLocaleKey='en_US', LocaleSidKey='en_US',
-                ProfileId = testProfile[0].Id, TimeZoneSidKey='America/Los_Angeles',
-                UserName= 'test3452345' + 'Test@test.com');
-
+        //user testUser = testDataFactory.createUser(profileName);
 
         //start the test
 
@@ -48,7 +42,7 @@ public with sharing class DeclarativeTestRunner {
         Test.startTest();
 
         //run the test as a test user with the chosen profile
-        System.runAs(testUser){
+        //System.runAs(testUser){
             Flow.Interview testFlow = Flow.Interview.createInterview(flowName, nothing);
 
             //Check to ensure that the flow is found and if it is run it.
@@ -59,7 +53,7 @@ public with sharing class DeclarativeTestRunner {
 
             system.assertEquals('Success', result);
 
-        }
+        //}
 
         Test.stopTest();
     }
@@ -96,7 +90,8 @@ public with sharing class DeclarativeTestRunner {
 
 
         //create and insert the test user to run the flow test as
-        user testUser = new User(Alias = 'FlowT', Email= 'test' + 'Test@test.com',
+        user testUser = new User( Email= 'test' + 'Test@test.com',
+                Alias='testUser',
                 EmailEncodingKey='UTF-8', LastName='test',
                 LanguageLocaleKey='en_US', LocaleSidKey='en_US',
                 ProfileId = testProfile[0].Id, TimeZoneSidKey='America/Los_Angeles',
@@ -132,62 +127,82 @@ public with sharing class DeclarativeTestRunner {
     @IsTest
     static void testRun3(){
         String result = testRunner('3');
-        System.assertEquals('Success', result);
-        Test.stopTest();
+        if(result != 'No test found'){
+            System.assertEquals('Success', result);
+            Test.stopTest();
+        }
     }
     @IsTest
     static void testRun4(){
         String result = testRunner('4');
-        System.assertEquals('Success', result);
-        Test.stopTest();
+        if(result != 'No test found'){
+            System.assertEquals('Success', result);
+            Test.stopTest();
+        }
     }
     @IsTest
     static void testRun5(){
         String result = testRunner('5');
-        System.assertEquals('Success', result);
-        Test.stopTest();
+        if(result != 'No test found'){
+            System.assertEquals('Success', result);
+            Test.stopTest();
+        }
     }
     @IsTest
     static void testRun6(){
         String result = testRunner('6');
-        System.assertEquals('Success', result);
-        Test.stopTest();
+        if(result != 'No test found'){
+            System.assertEquals('Success', result);
+            Test.stopTest();
+        }
     }
     @IsTest
     static void testRun7(){
         String result = testRunner('7');
-        System.assertEquals('Success', result);
-        Test.stopTest();
+        if(result != 'No test found'){
+            System.assertEquals('Success', result);
+            Test.stopTest();
+        }
     }
     @IsTest
     static void testRun8(){
         String result = testRunner('8');
-        System.assertEquals('Success', result);
-        Test.stopTest();
+        if(result != 'No test found'){
+            System.assertEquals('Success', result);
+            Test.stopTest();
+        }
     }
     @IsTest
     static void testRun9(){
         String result = testRunner('9');
-        System.assertEquals('Success', result);
-        Test.stopTest();
+        if(result != 'No test found'){
+            System.assertEquals('Success', result);
+            Test.stopTest();
+        }
     }
     @IsTest
     static void testRun10(){
         String result = testRunner('10');
-        System.assertEquals('Success', result);
-        Test.stopTest();
+        if(result != 'No test found'){
+            System.assertEquals('Success', result);
+            Test.stopTest();
+        }
     }
     @IsTest
     static void testRun11(){
         String result = testRunner('11');
-        System.assertEquals('Success', result);
-        Test.stopTest();
+        if(result != 'No test found'){
+            System.assertEquals('Success', result);
+            Test.stopTest();
+        }
     }
     @IsTest
     static void testRun12(){
         String result = testRunner('12');
-        System.assertEquals('Success', result);
-        Test.stopTest();
+        if(result != 'No test found'){
+            System.assertEquals('Success', result);
+            Test.stopTest();
+        }
     }
     /**
      * Example of test method generated over the tooling API
@@ -198,7 +213,7 @@ public with sharing class DeclarativeTestRunner {
     static void testFlowAccountUpdateProcessBuilder(){
         String result = testRunner('Test_Flow_Account_Update_Process_Builder');
         //Testing only starts if metadata record is found, may return without testing start.
-        if(Test.isRunningTest()){
+        if(result != 'No test found'){
             System.assertEquals('Success', result);
             Test.stopTest();
         }
@@ -213,7 +228,7 @@ public with sharing class DeclarativeTestRunner {
      * @return
      */
 
-    static string testRunner(String runNumber) {
+    public static string testRunner(String runNumber) {
 
         string result; //variable that will record the result of the test flow
         string profileName; //variable to store run as profile
@@ -233,7 +248,7 @@ public with sharing class DeclarativeTestRunner {
 
 
             //create and insert the test user to run the flow test as
-            user testUser = new User(Alias = 'FlowT', Email= 'test' + 'Test@test.com',
+            user testUser = new User( Email= 'test' + 'Test@test.com',
                     EmailEncodingKey='UTF-8', LastName='test',
                     LanguageLocaleKey='en_US', LocaleSidKey='en_US',
                     ProfileId = testProfile[0].Id, TimeZoneSidKey='America/Los_Angeles',
@@ -260,7 +275,7 @@ public with sharing class DeclarativeTestRunner {
             //No metadata found, assume no test to run here.
             System.debug('No flowTestRunner metadata found for run '+runNumber+', nothing to test.' +
                     'If you expected a test to run, check your metadata naming');
-            result = 'Success';
+            result = 'No test found';
         }
 
         return result;
