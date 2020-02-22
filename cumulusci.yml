@@ -4,6 +4,10 @@ project:
         name:  DeclarativeTestGeneration
         api_version: '47.0'
 
+dependencies:
+    - github: https://github.com/selfuntitled/apex-toolingapi
+      unmanaged: True
+
 tasks:
     robot:
         options:
